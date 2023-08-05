@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Increment and Decrement Example</title>
+    <style>
+        /* Add some basic styling to the button */
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Value: <span id="counter">0</span></h1>
+    <button id="decrementButton">Decrement</button>
+    <button id="incrementButton">Increment</button>
+
+    <script>
+        // JavaScript to handle the button clicks and update the value
+        const counterElement = document.getElementById('counter');
+        const decrementButton = document.getElementById('decrementButton');
+        const incrementButton = document.getElementById('incrementButton');
+
+        let currentValue = 0;
+
+        // Update the counter text with the current value
+        function updateCounter() {
+            counterElement.innerText = currentValue;
+        }
+
+        // Function to handle increment button click and increase the value
+        function handleIncrementClick() {
+            currentValue++;
+            updateCounter();
+        }
+
+        // Function to handle decrement button click and decrease the value
+        function handleDecrementClick() {
+            currentValue--;
+            updateCounter();
+        }
+
+        // Attach the click event listeners to the buttons
+        incrementButton.addEventListener('click', handleIncrementClick);
+        decrementButton.addEventListener('click', handleDecrementClick);
+    </script>
+</body>
+</html>
